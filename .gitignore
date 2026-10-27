@@ -3,6 +3,7 @@
 .import/
 export.cfg
 export_presets.cfg
+!export_presets.cfg
 
 # Mono-specific ignores
 .mono/
@@ -24,6 +25,7 @@ editor/tutorials/assets/
 
 # Release-specific; added by upstream build script
 castagne-version.json
+!castagne/castagne-version.json
 
 # Keep Godot HTML5 web export (index.html / .js / .wasm / .pck) in git for Vercel
 !/web/
