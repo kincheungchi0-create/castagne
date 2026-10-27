@@ -28,3 +28,8 @@ castagne-version.json
 # Keep Godot HTML5 web export (index.html / .js / .wasm / .pck) in git for Vercel
 !/web/
 !/web/**
+
+# Vercel local link
+.vercel/
+web/.vercel/
+web/.env.local
