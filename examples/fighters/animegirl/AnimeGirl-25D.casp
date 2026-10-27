@@ -1,0 +1,146 @@
+:Character:
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+## Anime Girl starter fighter for Castagne.
+## Skeleton pulls model + ANIM_* map from AnimeGirl-Model.casp.
+## Attack states below are stubs: hitboxes are approximate Capoeira kicks.
+## Import animation GLBs into AnimeGirlModel.tscn before expecting clips to play.
+
+Name: Anime Girl
+EditorName: Anime Girl (Starter Fighter)
+
+Skeleton: res://castagne/examples/fighters/animegirl/AnimeGirl-Model.casp
+:Specs-PhysicsMovement:
+def MOVE_Walk_SpeedF int() = 1100
+def MOVE_Walk_SpeedB int() = -900
+:Variables:
+# Starter stubs — tune later in the Castagne editor.
+:5L:
+## Light standing kick (Martelo)
+
+AttackRegister(Light)
+AttackDamage(500)
+AttackDuration(28)
+AttackFrameAdvantage(2, -6)
+AttackMomentum(600, 0, 400, 800)
+
+Anim(martelo_2)
+
+F8-12:
+	Hitbox(0, 14000, 2000, 14000)
+endif
+:5M:
+## Medium spinning kick (Armada)
+
+AttackRegister(Medium)
+AttackDamage(900)
+AttackDuration(36)
+AttackFrameAdvantage(0, -8)
+AttackMomentum(900, 0, 600, 1000)
+
+Anim(armada)
+
+F6-10:
+	Move(800, 0)
+endif
+
+F12-16:
+	Hitbox(0, 16000, 3000, 15000)
+endif
+:5H:
+## Heavy crescent kick (Meia Lua de Frente)
+
+AttackRegister(Heavy)
+AttackDamage(1300)
+AttackDuration(42)
+AttackFrameAdvantage(4, -10)
+AttackMomentum(1000, 200, 700, 1400)
+AttackFloat(40)
+
+Anim(meia_lua_de_frente)
+
+F14-18:
+	Hitbox(0, 17000, 4000, 16000)
+endif
+:2L:
+## Low poke (Rasteira)
+
+Flag(Crouching)
+AttackRegister(Light)
+AttackDamage(400)
+AttackDuration(24)
+AttackFrameAdvantage(1, -4)
+AttackMustBlock(Low)
+
+Anim(rasteira_1)
+
+F7-10:
+	Hitbox(0, 13000, 0, 6000)
+endif
+:2M:
+## Low trip (Chapa)
+
+Flag(Crouching)
+AttackRegister(Medium)
+AttackDamage(1000)
+AttackDuration(38)
+AttackFrameAdvantage(2, -8)
+AttackMustBlock(Low)
+AttackMomentumHit(700, 1200)
+AttackMomentumBlock(700, 0, 500, 800)
+AttackFloat(90)
+
+Anim(chapa_2)
+
+F10-13:
+	Hitbox(0, 15000, 0, 5500)
+endif
+:6M:
+## Advancing front kick (Bencao)
+
+AttackRegister(Medium)
+AttackDamage(850)
+AttackDuration(32)
+AttackFrameAdvantage(-1, -7)
+AttackMomentum(1100, 0, 800, 900)
+
+Anim(bencao)
+
+F5-9:
+	Move(1200, 0)
+endif
+
+F11-14:
+	Hitbox(2000, 16000, 2000, 13000)
+endif
+:4S:
+## Special: ground Martelo do Chau
+
+AttackRegister(Special)
+AttackDamage(1400)
+AttackDuration(48)
+AttackFrameAdvantage(6, -12)
+AttackMomentum(400, 1600, 300, 1800)
+AttackFloat(80)
+
+Anim(martelo_do_chau)
+
+F18-22:
+	Hitbox(0, 15000, 0, 12000)
+endif
+:jL:
+## Jumping kick (Au into strike silhouette — uses au clip)
+
+AttackRegister(Light)
+AttackDamage(600)
+AttackDuration(30)
+AttackFrameAdvantage(0, -4)
+AttackMomentum(500, -200, 400, 600)
+
+Anim(au)
+
+F10-14:
+	Hitbox(0, 12000, 2000, 12000)
+endif

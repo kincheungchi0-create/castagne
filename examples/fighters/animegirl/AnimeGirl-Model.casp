@@ -1,0 +1,113 @@
+:Character:
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+## Helper Casp that points graphics + ANIM_* slots at the Anime Girl (sketchgirl) pack.
+## Clip names match the animation GLB basenames under assets/fighters/animegirl/models/.
+## Import those GLBs into the model AnimationPlayer before playtesting (see README).
+
+Name: Anime Girl
+EditorName: Anime Girl (Custom Character)
+
+#------------------------------------------------------------------
+# Intended AnimationPlayer clip names (from sketchgirl Capoeira set):
+#
+#--- Stance / movement
+# ginga_variation_1 ginga_variation_2 ginga_variation_3
+# ginga_forward ginga_backward ginga_sideways_1 ginga_sideways_2
+# ginga_sideways_to_au
+#
+#--- Attacks / kicks
+# martelo_2 martelo_3 martelo_do_chau martelo_do_chau_sem_mao
+# armada armada_to_esquiva bencao chapa_2 chapa_giratoria chapa_giratoria_2
+# chapaeu_de_couro meia_lua_de_compasso meia_lua_de_compasso_back
+# meia_lua_de_frente pontera queshada_1 queshada_2 rasteira_1 rasteira_2
+#
+#--- Defense / acrobatics
+# esquiva_1 esquiva_2 esquiva_3 esquiva_4 esquiva_5
+# au au_to_role macaco_side troca_1
+# capoeira capoeira_2 capoeira_3
+:Specs-Graphics:
+def GRAPHICS_ModelPath str() = res://castagne/assets/fighters/animegirl/AnimeGirlModel.tscn
+def GRAPHICS_UseModel bool() = 1
+def GRAPHICS_UseSprites bool() = 0
+:Specs-Anims:
+# Emotes
+def ANIM_Emote_Dead str() = au_to_role
+def ANIM_Emote_Intro str() = ginga_variation_1
+def ANIM_Emote_Timeout str() = esquiva_2
+def ANIM_Emote_Win str() = capoeira
+
+# Basic movement — ginga ≈ Capoeira idle / walk sway
+def ANIM_Movement_Basic_AirIdle str() = au
+def ANIM_Movement_Basic_CrawlB str() = ginga_backward
+def ANIM_Movement_Basic_CrawlB_Loop int() = 30
+def ANIM_Movement_Basic_CrawlF str() = ginga_forward
+def ANIM_Movement_Basic_CrawlF_Loop int() = 30
+def ANIM_Movement_Basic_CrouchToStand str() = ginga_variation_1
+def ANIM_Movement_Basic_Crouching str() = esquiva_3
+def ANIM_Movement_Basic_Crouching_Loop int() = 30
+def ANIM_Movement_Basic_JumpB str() = au
+def ANIM_Movement_Basic_JumpF str() = au
+def ANIM_Movement_Basic_JumpN str() = au
+def ANIM_Movement_Basic_Jumpsquat str() = ginga_variation_2
+def ANIM_Movement_Basic_Landing str() = ginga_variation_2
+def ANIM_Movement_Basic_Stand str() = ginga_variation_1
+def ANIM_Movement_Basic_StandToCrouch str() = esquiva_3
+def ANIM_Movement_Basic_Stand_Loop int() = 60
+def ANIM_Movement_Basic_Turnaround str() = troca_1
+def ANIM_Movement_Basic_TurnaroundAirborne str() = au
+def ANIM_Movement_Basic_TurnaroundCrouch str() = esquiva_4
+def ANIM_Movement_Basic_WalkB str() = ginga_backward
+def ANIM_Movement_Basic_WalkB_Loop int() = 30
+def ANIM_Movement_Basic_WalkF str() = ginga_forward
+def ANIM_Movement_Basic_WalkF_Loop int() = 30
+
+# Dashes / run — sideways ginga + macaco as best available
+def ANIM_Movement_Dashes_AirdashB str() = au
+def ANIM_Movement_Dashes_AirdashF str() = ginga_sideways_to_au
+def ANIM_Movement_Dashes_AirjumpB str() = au
+def ANIM_Movement_Dashes_AirjumpF str() = au
+def ANIM_Movement_Dashes_AirjumpN str() = au
+def ANIM_Movement_Dashes_Backdash str() = ginga_sideways_2
+def ANIM_Movement_Dashes_HighjumpB str() = au
+def ANIM_Movement_Dashes_HighjumpF str() = au
+def ANIM_Movement_Dashes_HighjumpN str() = au
+def ANIM_Movement_Dashes_Run str() = ginga_forward
+def ANIM_Movement_Dashes_RunStart str() = ginga_sideways_1
+def ANIM_Movement_Dashes_RunStop str() = ginga_variation_3
+def ANIM_Movement_Dashes_Run_Loop int() = 30
+def ANIM_Movement_Dashes_StepDash str() = ginga_sideways_1
+def ANIM_Movement_Dashes_TurnaroundRun str() = troca_1
+
+# Reacts — esquiva ≈ dodge / block; au_to_role ≈ knockdown-ish
+def ANIM_Reacts_Blockstun_Airborne str() = esquiva_5
+def ANIM_Reacts_Blockstun_Crouching str() = esquiva_3
+def ANIM_Reacts_Blockstun_Standing str() = esquiva_1
+def ANIM_Reacts_Dead str() = au_to_role
+def ANIM_Reacts_Hitstun_Airborne str() = esquiva_5
+def ANIM_Reacts_Hitstun_Crouching str() = esquiva_4
+def ANIM_Reacts_Hitstun_Standing str() = esquiva_2
+def ANIM_Reacts_Knockdown str() = au_to_role
+def ANIM_Reacts_Tech_Airborne_Backward str() = au
+def ANIM_Reacts_Tech_Airborne_Down str() = au
+def ANIM_Reacts_Tech_Airborne_Forward str() = au
+def ANIM_Reacts_Tech_Airborne_Neutral str() = au
+def ANIM_Reacts_Tech_Airborne_Up str() = au
+def ANIM_Reacts_Tech_Grounded_Backward str() = esquiva_2
+def ANIM_Reacts_Tech_Grounded_Forward str() = esquiva_1
+def ANIM_Reacts_Tech_Grounded_Neutral str() = esquiva_1
+def ANIM_Reacts_Tech_Grounded_Up str() = esquiva_5
+def ANIM_Reacts_Tech_Knockdown_Backward str() = macaco_side
+def ANIM_Reacts_Tech_Knockdown_Forward str() = macaco_side
+def ANIM_Reacts_Tech_Knockdown_Neutral str() = macaco_side
+def ANIM_Reacts_Tech_Knockdown_Up str() = au
+def ANIM_Reacts_Throw_Air_Held str() = esquiva_2
+def ANIM_Reacts_Throw_Air_Holding str() = martelo_do_chau
+def ANIM_Reacts_Throw_Air_Teched str() = esquiva_1
+def ANIM_Reacts_Throw_Air_Teching str() = esquiva_1
+def ANIM_Reacts_Throw_Ground_Held str() = esquiva_2
+def ANIM_Reacts_Throw_Ground_Holding str() = martelo_do_chau
+def ANIM_Reacts_Throw_Ground_Teched str() = esquiva_1
+def ANIM_Reacts_Throw_Ground_Teching str() = esquiva_1
