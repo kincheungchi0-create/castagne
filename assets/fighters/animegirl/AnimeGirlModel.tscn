@@ -22946,6 +22946,7 @@ mesh = SubResource( 18 )
 skin = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sketchfab_model/860184f4426b4629af3637edb7c278e7fbx/Object_2/RootNode")
 anims/armada = SubResource( 19 )
 anims/armada_to_esquiva = SubResource( 20 )
 anims/au = SubResource( 21 )
