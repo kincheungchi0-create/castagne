@@ -1,0 +1,8 @@
+{
+  "ConfigSkeleton": "res://castagne/helpers/genreskeletons/CC25DFighter.json",
+  "Editor-FirstTimeFlowDone": true,
+  "Skeletons": "res://fighters/Skeleton.casp",
+  "CharacterPaths": "res://castagne/examples/fighters/animegirl/AnimeGirl-25D.casp, res://castagne/examples/fighters/baston/Baston-25D.casp",
+  "StagePaths": "res://castagne/examples/stages/default-25d-stage/Default25DStage.tscn",
+  "Modules-graphics": "graphics25d"
+}
