@@ -9,6 +9,7 @@
 ## Import animation GLBs into AnimeGirlModel.tscn before expecting clips to play.
 
 Name: Anime Girl
+def MENU_Name str() = Anime Girl
 EditorName: Anime Girl (Starter Fighter)
 
 Skeleton: res://castagne/examples/fighters/animegirl/AnimeGirl-Model.casp
